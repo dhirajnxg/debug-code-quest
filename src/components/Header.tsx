@@ -11,11 +11,14 @@ const Header = () => {
   const [userLevel, setUserLevel] = React.useState(5);
   
   return (
-    <header className="border-b border-border bg-background sticky top-0 z-10">
+    <header className="border-b border-debug-green bg-background sticky top-0 z-10">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Bug className="h-8 w-8 text-debug-purple" />
-          <span className="text-2xl font-bold">DebugMe</span>
+          <Bug 
+            className="h-8 w-8 text-debug-red animate-bug-color" 
+            strokeWidth={2} 
+          />
+          <span className="text-2xl font-bold text-primary">DebugMe</span>
         </div>
         
         <div className="flex items-center gap-4">
