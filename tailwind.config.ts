@@ -39,10 +39,15 @@ export default {
         'bug-color-transition': {
           '0%': { color: '#EF4444' }, // Start with red
           '100%': { color: '#00FF00' } // Transition to bright green
+        },
+        'bug-color-loop': {
+          '0%, 100%': { color: '#00FF00' }, // Green
+          '50%': { color: '#EF4444' } // Red
         }
       },
       animation: {
-        'bug-color': 'bug-color-transition 5s ease-in-out forwards'
+        'bug-color': 'bug-color-transition 5s ease-in-out forwards',
+        'bug-loop': 'bug-color-loop 4s infinite'
       }
     }
   },

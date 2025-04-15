@@ -6,6 +6,7 @@ import { Trophy, Activity, Zap } from "lucide-react";
 import LevelCard from "@/components/LevelCard";
 import AdBanner from "@/components/AdBanner";
 import ExpCalculator from "@/components/ExpCalculator";
+import PremiumBanner from "@/components/PremiumBanner";
 
 // Mock data for challenges
 const challenges = [
@@ -66,6 +67,15 @@ const challenges = [
 ];
 
 const Dashboard = () => {
+  // Premium state
+  const [isPremium, setIsPremium] = React.useState(false);
+  const [debugsRemaining, setDebugsRemaining] = React.useState(5);
+  
+  const handleUpgrade = () => {
+    setIsPremium(true);
+    // In a real app, this would trigger payment flow
+  };
+  
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Dashboard Header */}
@@ -79,7 +89,7 @@ const Dashboard = () => {
           <Button variant="outline">
             View All Challenges
           </Button>
-          <Button className="bg-debug-purple hover:bg-debug-purple/90">
+          <Button className="bg-primary hover:bg-primary/90 text-background">
             Resume Progress
           </Button>
         </div>
@@ -94,8 +104,8 @@ const Dashboard = () => {
               <div className="text-3xl font-bold">5</div>
               <p className="text-sm text-muted-foreground mt-2">40% to Level 6</p>
             </div>
-            <div className="h-14 w-14 rounded-full bg-debug-purple/10 flex items-center justify-center">
-              <Trophy className="h-7 w-7 text-debug-purple" />
+            <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
+              <Trophy className="h-7 w-7 text-primary" />
             </div>
           </CardContent>
         </Card>
@@ -107,8 +117,8 @@ const Dashboard = () => {
               <div className="text-3xl font-bold">1,250</div>
               <p className="text-sm text-muted-foreground mt-2">+120 XP this week</p>
             </div>
-            <div className="h-14 w-14 rounded-full bg-debug-purple/10 flex items-center justify-center">
-              <Zap className="h-7 w-7 text-debug-purple" />
+            <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
+              <Zap className="h-7 w-7 text-primary" />
             </div>
           </CardContent>
         </Card>
@@ -120,8 +130,8 @@ const Dashboard = () => {
               <div className="text-3xl font-bold">23</div>
               <p className="text-sm text-muted-foreground mt-2">8 in the last 7 days</p>
             </div>
-            <div className="h-14 w-14 rounded-full bg-debug-purple/10 flex items-center justify-center">
-              <Activity className="h-7 w-7 text-debug-purple" />
+            <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
+              <Activity className="h-7 w-7 text-primary" />
             </div>
           </CardContent>
         </Card>
@@ -154,6 +164,11 @@ const Dashboard = () => {
         </div>
         
         <div className="space-y-6">
+          <PremiumBanner 
+            isPremium={isPremium}
+            debugsRemaining={debugsRemaining}
+            onUpgrade={handleUpgrade}
+          />
           <AdBanner position="sidebar" />
           <ExpCalculator />
         </div>
