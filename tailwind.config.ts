@@ -20,27 +20,25 @@ export default {
     },
     extend: {
       colors: {
-        // Modify color palette to green and black
         background: {
           DEFAULT: '#000000', // Black
-          foreground: '#10B981', // Green
+          foreground: '#00FF00', // Bright Green
         },
         primary: {
-          DEFAULT: '#10B981', // Green
+          DEFAULT: '#00FF00', // Bright Green
           foreground: '#000000', // Black
         },
-        border: '#10B981', // Green border
+        border: '#00FF00', // Bright Green border
         debug: {
-          "green": "#10B981",
+          "green": "#00FF00",
           "black": "#000000",
           "red": "#EF4444"
         }
       },
       keyframes: {
-        // Add a new keyframe for bug color transition
         'bug-color-transition': {
           '0%': { color: '#EF4444' }, // Start with red
-          '100%': { color: '#10B981' } // Transition to green
+          '100%': { color: '#00FF00' } // Transition to bright green
         }
       },
       animation: {
