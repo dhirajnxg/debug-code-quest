@@ -38,7 +38,7 @@ const PremiumBanner = ({ isPremium, debugsRemaining, onUpgrade }: PremiumBannerP
             <p className="text-sm text-muted-foreground">
               {debugsRemaining > 0 
                 ? `You have ${debugsRemaining} debug challenges left.` 
-                : 'You've reached your free debug challenges limit.'}
+                : "You've reached your free debug challenges limit."}
             </p>
             <Button 
               onClick={onUpgrade}
